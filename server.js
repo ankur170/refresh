@@ -1,6 +1,7 @@
 const express=require('express')
+const conf=require('./config')
 const app=express()
 app.get('/ankur',(req,res)=>{
-    res.send('hi i am here')
+    res.send(conf)
 })
-app.listen(process.env.PORT,()=>{console.log('hey do you wanna daru')})
+app.listen(conf.port,()=>{console.log('hey do you wanna daru')})

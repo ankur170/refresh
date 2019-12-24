@@ -4,8 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-    "start": "node server"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cross-env ENV=prod node server",
+    "add": "git add .",
+    "commit": "git commit -m 'auto_deploy'",
+    "push": "git push",
+    "deploy": "npm run add && npm run commit && npm run push",
+    "dev":"cross-env ENV=dev node server"
   },
   "repository": {
     "type": "git",
@@ -18,6 +23,7 @@
   },
   "homepage": "https://github.com/ankur170/refresh#readme",
   "dependencies": {
+    "cross-env": "^6.0.3",
     "express": "^4.17.1"
   }
 }
